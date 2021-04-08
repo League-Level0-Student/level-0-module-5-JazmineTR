@@ -3,7 +3,8 @@
 
 void setup() {
   /* Set the size of your sketch to be a rectangle like in the recipe demonstration */
-  
+  size(500,600);
+  noFill();
   /* Call the noFill() command so all the ellipses will be transparent */
 }
 
