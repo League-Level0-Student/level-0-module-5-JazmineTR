@@ -16,8 +16,12 @@ public class obedientrobot {
 		if(shape.equalsIgnoreCase("square")) {
 			drawSquare();
 		}
+		String color = JOptionPane.showInputDialog("What color would you like? Blue, Red, or Green?");
+		if(color.equalsIgnoreCase("Blue")) {
+		 
+		}
 	}
-	 static void drawSquare() {
+	 static void drawSquare(Color colorA) {
 		Robot rob = new Robot();
 		rob.show();
 		rob.penDown();
@@ -27,7 +31,7 @@ public class obedientrobot {
 	}
 	rob.hide();
 }
-	 static void drawTriangle() {
+	 static void drawTriangle(Color colorB) {
 		Robot rob = new Robot();
 		rob.show();
 		rob.penDown();
@@ -37,7 +41,7 @@ public class obedientrobot {
 	}
 	rob.hide();
 	}
-	static void drawCircle() {
+	static void drawCircle(Color colorC) {
 		Robot rob = new Robot();	
 		rob.show();
 		rob.penDown();
