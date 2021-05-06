@@ -1,5 +1,7 @@
 package _03_method_writing._1_obedient_robot;
 
+import java.awt.Color;
+
 import javax.swing.JOptionPane;
 
 import org.jointheleague.graphical.robot.Robot;
@@ -7,22 +9,33 @@ import org.jointheleague.graphical.robot.Robot;
 public class obedientrobot {
 	public static void main(String[] args) {
 		String shape =JOptionPane.showInputDialog("What shape would you like the robot to draw? Circle, Triangle, or Square");
+		String color = JOptionPane.showInputDialog("What color would you like? Blue, Red, or Green?");
+		Color felt = Color.black;
+		if(color.equalsIgnoreCase("Blue")) {
+			felt = Color.blue;
+		}
+		else if(color.equalsIgnoreCase("Red")) {
+			felt = Color.red;
+		}
+		else if(color.equalsIgnoreCase("Green")) {
+			felt = Color.green;
+		}
 		if(shape.equalsIgnoreCase("circle")) {
-			drawCircle();
+			drawCircle(felt);
 		}
 		if(shape.equalsIgnoreCase("triangle")) {
-			drawTriangle();
+			drawTriangle(felt);
 		}
 		if(shape.equalsIgnoreCase("square")) {
-			drawSquare();
+			drawSquare(felt);
 		}
-		String color = JOptionPane.showInputDialog("What color would you like? Blue, Red, or Green?");
-		if(color.equalsIgnoreCase("Blue")) {
+	 
 		 
-		}
+		
 	}
 	 static void drawSquare(Color colorA) {
 		Robot rob = new Robot();
+		rob.setPenColor(colorA);
 		rob.show();
 		rob.penDown();
 	for(int i =0;i<4;i++) {
@@ -33,6 +46,7 @@ public class obedientrobot {
 }
 	 static void drawTriangle(Color colorB) {
 		Robot rob = new Robot();
+		rob.setPenColor(colorB);
 		rob.show();
 		rob.penDown();
 	for(int i = 0; i<3;i++) {
@@ -42,7 +56,8 @@ public class obedientrobot {
 	rob.hide();
 	}
 	static void drawCircle(Color colorC) {
-		Robot rob = new Robot();	
+		Robot rob = new Robot();
+		rob.setPenColor(colorC);
 		rob.show();
 		rob.penDown();
 		rob.setSpeed(100);
